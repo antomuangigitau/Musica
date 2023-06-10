@@ -41,4 +41,19 @@ export const Wrapper = styled.div`
       flex-basis: 200px;
     }
   }
+  .btn {
+    border: none;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 11px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+  }
 `;

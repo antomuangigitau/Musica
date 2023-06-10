@@ -11,6 +11,8 @@ const SongList = (playlists) => {
   //   setIsActiveIndex((prevIndex) => (prevIndex === index ? '' : index));
   // };
   const [activeIndexes, setActiveIndexes] = useState([]);
+  const [numToShow, setNumToShow] = useState(10);
+  const numToAdd = 10;
 
   const handleClick = (index) => {
     if (activeIndexes.includes(index)) {
@@ -21,9 +23,12 @@ const SongList = (playlists) => {
       setActiveIndexes([...activeIndexes, index]);
     }
   };
+  const handleShowMore = () => {
+    setNumToShow(numToShow + numToAdd);
+  };
   return (
     <Wrapper>
-      {items.map((item, index) => {
+      {items.slice(0, numToShow).map((item, index) => {
         const {
           track: {
             album: { album_type, images, name: song_name },
@@ -60,6 +65,13 @@ const SongList = (playlists) => {
           </div>
         );
       })}
+      {numToShow < items.length && (
+        <div className="flex__center">
+          <button className="btn" onClick={handleShowMore}>
+            Load more
+          </button>
+        </div>
+      )}
     </Wrapper>
   );
 };
