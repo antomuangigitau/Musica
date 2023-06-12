@@ -71,7 +71,7 @@ export const newRelease = {
   method: 'GET',
   url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
   params: {
-    id: '6fdmCesA42gM8jIHTBPwfH',
+    id: '37i9dQZF1EpzEybb0iKW60',
     offset: '0',
     limit: '100',
   },
