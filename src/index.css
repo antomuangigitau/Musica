@@ -30,6 +30,14 @@ input {
   outline: none;
   background-color: transparent;
 }
+button {
+  background: none;
+  border: 0;
+}
+ul,
+li {
+  list-style: none;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -39,15 +47,19 @@ input {
   justify-content: center;
 }
 
-#main {
-  position: relative;
+.main {
   display: grid;
-  grid-template-areas:
-    'header header header'
-    'aside main main'
-    'footer footer footer';
+  grid-template-areas: 'header header';
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
+}
+@media (min-width: 48rem) {
+  .main {
+    grid-template-areas:
+      'header header header'
+      'aside main main'
+      'footer footer footer';
+  }
 }
 
 @keyframes spinner {
@@ -81,14 +93,72 @@ input {
   fill: red;
   stroke: red;
 }
+.actives svg path {
+  fill: rgba(250, 205, 102, 1);
+  fill-opacity: 1;
+}
 .m-x {
-  width: 100%;
   max-width: 80rem;
-  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
+@media (min-width: 48rem) {
+  .m-x {
+    padding: unset;
+    margin: 0 2.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .m-x {
+    padding: unset;
+    margin-right: 59px;
+    margin-left: 20px;
+  }
+}
 @media (min-width: 90rem) {
   .m-x {
+    width: 100%;
     margin: auto;
   }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 300ms ease-in-out forwards;
+  animation: fade-out 300ms ease-in-out forwards;
 }

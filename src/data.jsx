@@ -8,26 +8,32 @@ import { Home, Logout, Playlist, Profile, Radio, Video } from './svgFiles';
 
 export const sidebarItems = [
   {
+    title: 'Home',
     path: '/',
     icon: Home,
   },
   {
+    title: 'My collections',
     path: '/collections',
     icon: Playlist,
   },
   {
+    title: 'Radio',
     path: '/radio',
     icon: Radio,
   },
   {
+    title: 'Music videos',
     path: '/video',
     icon: Video,
   },
   {
+    title: 'Profile',
     path: '/profile',
     icon: Profile,
   },
   {
+    title: 'Log Out',
     path: '/logout',
     icon: Logout,
   },

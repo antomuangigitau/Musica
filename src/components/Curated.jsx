@@ -5,9 +5,7 @@ import Hits from './Hits';
 const Curated = () => {
   return (
     <Wrapper>
-      {/* first div  */}
       <Hits />
-      {/* second div  */}
       <div>
         <img src={bgImg} alt="" />
       </div>

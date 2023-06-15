@@ -60,11 +60,5 @@ const Wrapper = styled.aside`
   div:last-child {
     margin-top: 20px;
   }
-
-  .actives svg path {
-    fill: rgba(250, 205, 102, 1);
-    fill-opacity: 1;
-    opacity: 1;
-  }
 `;
 export default Aside;

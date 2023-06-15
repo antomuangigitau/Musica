@@ -1,13 +1,14 @@
-import { Outlet } from 'react-router-dom';
-import { Footer, Header, Aside } from '../components';
+// import { Outlet } from 'react-router-dom';
+import { Header, MobileHeader } from '../components';
 
 const SharedLayout = () => {
   return (
     <>
       <Header />
-      <Aside />
+      <MobileHeader />
+      {/* <Aside />
       <Outlet />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };

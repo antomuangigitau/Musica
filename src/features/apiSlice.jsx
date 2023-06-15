@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   playlists: [],
+  isOpen: false,
 };
 
 const playlistSlice = createSlice({
@@ -13,9 +14,15 @@ const playlistSlice = createSlice({
     setPlaylists: (state, action) => {
       state.playlists = action.payload;
     },
+    setIsOpen: (state) => {
+      state.isOpen = true;
+    },
+    setIsClose: (state) => {
+      state.isOpen = false;
+    },
   },
 });
 
 // console.log(playlistSlice);
-export const { setPlaylists } = playlistSlice.actions;
+export const { setPlaylists, setIsClose, setIsOpen } = playlistSlice.actions;
 export default playlistSlice.reducer;
