@@ -164,23 +164,3 @@ li {
   -webkit-animation: fade-out 300ms ease-in-out forwards;
   animation: fade-out 300ms ease-in-out forwards;
 }
-
-.first__div {
-  overflow: auto;
-  margin-bottom: 10px;
-}
-.first__div::-webkit-scrollbar {
-  padding-top: 10px;
-  height: 8px;
-}
-
-.first__div::-webkit-scrollbar-track {
-  background: none;
-  border-radius: 100vw;
-  margin-block: 0.5em;
-}
-
-.first__div::-webkit-scrollbar-thumb {
-  background-color: var(--Grayish);
-  border-radius: 10px;
-}
