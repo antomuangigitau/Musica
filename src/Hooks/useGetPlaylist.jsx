@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_KEY = import.meta.env.VITE_API_KEY_TWO;
+const API_KEY = import.meta.env.VITE_API_KEY;
 // console.log(API_KEY);
 const headers = {
   'X-RapidAPI-Key': API_KEY,

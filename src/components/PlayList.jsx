@@ -11,8 +11,13 @@ const PlayList = () => {
 };
 const Wrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-bottom: 43px;
+  grid-template-columns: 1fr;
+  gap: 47px;
+  max-width: 100%;
+  @media (min-width: 64rem) {
+    margin-bottom: 43px;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
 `;
 export default PlayList;

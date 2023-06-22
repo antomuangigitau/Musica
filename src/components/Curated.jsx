@@ -6,9 +6,7 @@ const Curated = () => {
   return (
     <Wrapper>
       <Hits />
-      <div>
-        <img src={bgImg} alt="" />
-      </div>
+      <img className="box" src={bgImg} alt="" />
     </Wrapper>
   );
 };

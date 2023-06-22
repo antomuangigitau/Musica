@@ -42,23 +42,25 @@ const Aside = () => {
 };
 
 const Wrapper = styled.aside`
-  grid-area: aside;
-  margin-left: 20px;
-  margin-right: 29px;
-  div {
-    width: 52px;
-    padding: 25px 0;
-    border-radius: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1a1e1f;
-    a:not(:last-child) {
-      padding-bottom: 30px;
+  display: none;
+  @media (min-width: 62rem) {
+    display: block;
+    margin-right: 29px;
+    div {
+      width: 52px;
+      padding: 25px 0;
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #1a1e1f;
+      a:not(:last-child) {
+        padding-bottom: 30px;
+      }
     }
-  }
-  div:last-child {
-    margin-top: 20px;
+    div:last-child {
+      margin-top: 20px;
+    }
   }
 `;
 export default Aside;

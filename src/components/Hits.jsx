@@ -37,16 +37,13 @@ const Hits = () => {
 };
 
 const Wrapper = styled.div`
-  padding-left: 45px;
-  margin-top: 38px;
-  margin-bottom: 41px;
   h4 {
     font-weight: 400;
     font-size: 12px;
   }
   div:first-of-type {
-    margin-top: 85px;
-    margin-bottom: 76px;
+    margin-top: 236px;
+    margin-bottom: 46px;
     h3 {
       font-weight: 700;
       font-size: 35px;
@@ -60,11 +57,26 @@ const Wrapper = styled.div`
   div:last-of-type {
     display: flex;
     align-items: center;
+
     img:not(:first-child) {
       margin-left: -12px;
     }
     svg {
       margin: 0 15px;
+    }
+  }
+  @media (min-width: 48rem) {
+    div:first-of-type {
+      margin-top: 85px;
+      margin-bottom: 76px;
+    }
+    div:last-of-type {
+      justify-content: center;
+    }
+  }
+  @media (min-width: 64rem) {
+    div:last-of-type {
+      justify-content: flex-start;
     }
   }
 `;

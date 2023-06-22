@@ -62,7 +62,23 @@ export const getPlaylistAvicii = {
   method: 'GET',
   url: 'https://spotify23.p.rapidapi.com/playlist/',
   params: {
-    id: '37i9dQZF1DXcXBWjiVEM8R',
+    id: '37i9dQZF1DZ06evO0PRpBu',
+  },
+  headers: headers,
+};
+export const getPlaylistChris = {
+  method: 'GET',
+  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  params: {
+    id: '37i9dQZF1DZ06evO4fRiko',
+  },
+  headers: headers,
+};
+export const getPlaylistDrake = {
+  method: 'GET',
+  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  params: {
+    id: '37i9dQZF1DX7QOv5kjbU68',
   },
   headers: headers,
 };

@@ -4,9 +4,7 @@ const PlayerLayout = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 
-const Wrapper = styled.main`
-  grid-area: main;
-  margin-right: 59px;
-  padding-bottom: 100px;
+const Wrapper = styled.section`
+  width: 100%;
 `;
 export default PlayerLayout;
