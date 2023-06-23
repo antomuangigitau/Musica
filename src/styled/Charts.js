@@ -62,6 +62,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 64rem) {
+    overflow: hidden;
     .outer {
       gap: 12px;
       flex-direction: column;

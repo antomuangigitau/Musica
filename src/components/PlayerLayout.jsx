@@ -6,5 +6,6 @@ const PlayerLayout = ({ children }) => {
 
 const Wrapper = styled.section`
   width: 100%;
+  overflow: auto;
 `;
 export default PlayerLayout;

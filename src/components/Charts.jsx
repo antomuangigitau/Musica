@@ -90,7 +90,7 @@ const Charts = () => {
     return <p>Error occurred while fetching playlists.</p>;
   }
 
-  const shouldDisplayAllContainers = screenWidth < 64 * 16; // 64rem * 16px (assuming 1rem = 16px)
+  const shouldDisplayAllContainers = screenWidth < 64 * 16;
 
   return (
     <Wrapper>
@@ -103,7 +103,7 @@ const Charts = () => {
             }
             const { name, images, uri } = playlist;
             const playlistID = uri?.slice(8).replace(/:/g, '/');
-            const showContainer = shouldDisplayAllContainers || index < 3; // Display only three containers when screenWidth >= 64rem
+            const showContainer = shouldDisplayAllContainers || index < 3;
             return (
               showContainer && (
                 <div className="container" key={index}>
