@@ -44,7 +44,7 @@ const Charts = () => {
     isLoading,
     isError,
   } = useQuery(
-    ['playlist1,playlist2,playlist3'],
+    ['playlist1,playlist2,playlist3,playlist4,playlist5'],
     async () => {
       const playlist1 = await fetchPlaylist(getPlaylistAsake);
       const playlist2 = await fetchPlaylist(getPlaylistAvicii);
