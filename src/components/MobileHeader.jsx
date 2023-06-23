@@ -34,6 +34,7 @@ const MobileHeader = () => {
             return (
               <li key={index}>
                 <NavLink
+                  onClick={() => dispatch(setIsClose())}
                   to={path}
                   className={({ isActive, isPending }) =>
                     isPending ? 'pending' : isActive ? 'actives' : ''
