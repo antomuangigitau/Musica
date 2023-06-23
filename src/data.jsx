@@ -42,22 +42,22 @@ export const sidebarItems = [
 export const imgs = [
   {
     id: 1,
-    img: '../src/assets/user-1.svg',
+    img: '/assets/user-1.svg',
   },
   {
     id: 2,
-    img: '../src/assets/user-2.svg',
+    img: '/assets/user-2.svg',
   },
   {
     id: 3,
-    img: '../src/assets/user-3.svg',
+    img: '/assets/user-3.svg',
   },
   {
     id: 4,
-    img: '../src/assets/user-4.svg',
+    img: '/assets/user-4.svg',
   },
   {
     id: 5,
-    img: '../src/assets/user-5.svg',
+    img: '/assets/user-5.svg',
   },
 ];
