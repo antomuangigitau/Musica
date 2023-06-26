@@ -29,12 +29,11 @@ pnpm i or pnpm install
 ```
 
 4.Create a .env file in the project root directory and add your Rapid Spotify API credentials
-Due to the hard limits I used two APIs
+
 
 ```
-VITE_API_KEY = 'X-RapidAPI-Key' https://rapidapi.com/Glavier/api/spotify23/
-
-VITE_API_KEY_TWO = 'X-RapidAPI-Key' https://rapidapi.com/airaudoeduardo/api/spotify81/
+VITE_API_KEY = 'X-RapidAPI-Key' https://rapidapi.com/airaudoeduardo/api/spotify81/
+ 
 ```
 
 5. Start the development server with the following command:
