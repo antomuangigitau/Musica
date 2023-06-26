@@ -45,7 +45,6 @@ const Wrapper = styled.aside`
   display: none;
   @media (min-width: 62rem) {
     display: block;
-    margin-right: 29px;
     div {
       width: 52px;
       padding: 25px 0;

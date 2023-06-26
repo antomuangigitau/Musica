@@ -1,7 +1,7 @@
 import { PlayerLayout } from '../components';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { fetchTrack } from '../Hooks/useGetPlaylist';
+import { fetchTrack } from '../features/options';
 import Description from '../components/Description';
 import Loading from '../components/Loading';
 import SongList from '../components/SongList';

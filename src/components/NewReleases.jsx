@@ -21,14 +21,19 @@ const NewReleases = () => {
 
     return newMusic;
   });
+  console.log(playlist);
   const music = [
     {
       title: 'New releases.',
-      tracks: playlist?.items.slice(0, 8),
+      tracks: playlist.tracks.items.slice(0, 11),
     },
     {
       title: 'Popular.',
-      tracks: playlist?.items.slice(9, 17),
+      tracks: playlist.tracks.items.slice(11, 21),
+    },
+    {
+      title: 'Recently Played.',
+      tracks: playlist.tracks.items.slice(21, 30),
     },
   ];
 

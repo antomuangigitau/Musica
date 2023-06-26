@@ -65,7 +65,7 @@ const Charts = () => {
       cacheTime: Infinity,
     }
   );
-
+  console.log(playlists);
   useEffect(() => {
     // Update screen width on window resize
     const handleResize = () => {

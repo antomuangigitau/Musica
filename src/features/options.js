@@ -1,50 +1,15 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
+const url = 'https://spotify81.p.rapidapi.com/playlist';
 export const headers = {
   'X-RapidAPI-Key': API_KEY,
-  'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
-};
-
-//Asake
-export const options = {
-  method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
-  params: {
-    id: '37i9dQZF1DZ06evO1PtbYA',
-    offset: '0',
-    limit: '100',
-  },
-  headers: headers,
-};
-
-// Gunna Wunna
-export const options1 = {
-  method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
-  params: {
-    id: '37i9dQZF1DZ06evO1iznkj',
-    offset: '0',
-    limit: '100',
-  },
-  headers: headers,
-};
-
-//Avicii
-export const options2 = {
-  method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
-  params: {
-    id: '37i9dQZF1DXcXBWjiVEM8R',
-    offset: '0',
-    limit: '100',
-  },
-  headers: headers,
+  'X-RapidAPI-Host': 'spotify81.p.rapidapi.com',
 };
 
 // get playlist
 
 export const getPlaylistGunna = {
   method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  url: url,
   params: {
     id: '37i9dQZF1DZ06evO1iznkj',
   },
@@ -52,7 +17,7 @@ export const getPlaylistGunna = {
 };
 export const getPlaylistAsake = {
   method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  url: url,
   params: {
     id: '37i9dQZF1DZ06evO1PtbYA',
   },
@@ -60,7 +25,7 @@ export const getPlaylistAsake = {
 };
 export const getPlaylistAvicii = {
   method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  url: url,
   params: {
     id: '37i9dQZF1DZ06evO0PRpBu',
   },
@@ -68,7 +33,7 @@ export const getPlaylistAvicii = {
 };
 export const getPlaylistChris = {
   method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  url: url,
   params: {
     id: '37i9dQZF1DZ06evO4fRiko',
   },
@@ -76,7 +41,7 @@ export const getPlaylistChris = {
 };
 export const getPlaylistDrake = {
   method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist/',
+  url: url,
   params: {
     id: '37i9dQZF1DX7QOv5kjbU68',
   },
@@ -85,7 +50,7 @@ export const getPlaylistDrake = {
 
 export const newRelease = {
   method: 'GET',
-  url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
+  url: url,
   params: {
     id: '37i9dQZF1EpzEybb0iKW60',
     offset: '0',
@@ -93,3 +58,62 @@ export const newRelease = {
   },
   headers: headers,
 };
+
+import axios from 'axios';
+
+export const fetchTrack = async (id) => {
+  const options = {
+    method: 'GET',
+    url: 'https://spotify81.p.rapidapi.com/playlist',
+    params: {
+      id: id,
+      offset: '0',
+      limit: '100',
+    },
+    headers,
+  };
+
+  try {
+    const response = await axios(options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// found another API that has all the contents without first getting the playlist then the tracks
+//Asake
+// export const options = {
+//   method: 'GET',
+//   url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
+//   params: {
+//     id: '37i9dQZF1DZ06evO1PtbYA',
+//     offset: '0',
+//     limit: '100',
+//   },
+//   headers: headers,
+// };
+
+// // Gunna Wunna
+// export const options1 = {
+//   method: 'GET',
+//   url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
+//   params: {
+//     id: '37i9dQZF1DZ06evO1iznkj',
+//     offset: '0',
+//     limit: '100',
+//   },
+//   headers: headers,
+// };
+
+// //Avicii
+// export const options2 = {
+//   method: 'GET',
+//   url: 'https://spotify23.p.rapidapi.com/playlist_tracks/',
+//   params: {
+//     id: '37i9dQZF1DXcXBWjiVEM8R',
+//     offset: '0',
+//     limit: '100',
+//   },
+//   headers: headers,
+// };
