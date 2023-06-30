@@ -398,9 +398,11 @@ export const Close = () => {
   );
 };
 
-export const Shuffle = () => {
+export const Shuffle = ({ className, onClick }) => {
   return (
     <svg
+      className={className}
+      onClick={onClick}
       width="16"
       height="17"
       viewBox="0 0 16 17"
@@ -432,9 +434,10 @@ export const Shuffle = () => {
   );
 };
 
-export const Previous = () => {
+export const Previous = ({ prevSong }) => {
   return (
     <svg
+      onClick={prevSong}
       width="16"
       height="17"
       viewBox="0 0 16 17"
@@ -479,9 +482,10 @@ export const PlayBar = () => {
   );
 };
 
-export const Next = () => {
+export const Next = ({ nextSong }) => {
   return (
     <svg
+      onClick={nextSong}
       width="16"
       height="17"
       viewBox="0 0 16 17"
@@ -508,9 +512,11 @@ export const Next = () => {
   );
 };
 
-export const Repeat = () => {
+export const Repeat = ({ className, onClick }) => {
   return (
     <svg
+      className={className}
+      onClick={onClick}
       width="16"
       height="17"
       viewBox="0 0 16 17"

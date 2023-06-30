@@ -101,6 +101,10 @@ li {
   fill: rgba(250, 205, 102, 1);
   fill-opacity: 1;
 }
+.activesvg path {
+  fill: rgba(250, 205, 102, 1);
+  fill-opacity: 1;
+}
 .m-x {
   max-width: 80rem;
   padding-left: 1.5rem;

@@ -1,23 +1,35 @@
 import styled from 'styled-components';
 export const Wrapper = styled.div`
-  div:first-child {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  .click {
+    align-self: center;
     display: flex;
     align-items: center;
     gap: 42px;
-    button:nth-of-type(3) {
+    button {
+      cursor: pointer;
+    }
+    .btn {
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      width: 16px;
-      height: 16px;
-      background-color: rgba(250, 205102, 1);
+      width: 40px;
+      height: 40px;
+    }
+    .play__color {
+      background-color: rgba(250, 205, 102, 1);
+    }
+    .pause__color {
+      background-color: #fff;
     }
   }
-
   .input__div {
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
     .range {
       position: relative;

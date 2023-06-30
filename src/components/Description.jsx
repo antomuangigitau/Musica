@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Wrapped } from '../styled/Description';
 import { Heart, MusicSquare, Play } from '../svgFiles';
+
 import Button from '../utils/Button';
+import { useDispatch } from 'react-redux';
+import { setActiveSong, setActiveSongs } from '../features/apiSlice';
 const Description = (playlists) => {
+  const dispatch = useDispatch();
   const { playlists: list } = playlists;
   const { description, name, images, tracks } = list;
   const [active, setActive] = useState(false);
@@ -19,6 +23,11 @@ const Description = (playlists) => {
   const minutes = Math.floor(
     (totalDurationMs % (1000 * 60 * 60)) / (1000 * 60)
   );
+  const handlePlay = (activeSong) => {
+    const songs = items.map((item) => item.track);
+    dispatch(setActiveSong(activeSong || songs[0]));
+    dispatch(setActiveSongs(songs));
+  };
   return (
     <Wrapped>
       <div className="container">
@@ -33,7 +42,7 @@ const Description = (playlists) => {
           </span>
         </article>
         <div>
-          <Button>
+          <Button onClick={() => handlePlay()}>
             <Play />
             <span>Play all</span>
           </Button>

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
-const Button = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const Button = ({ onClick, children }) => {
+  return <Wrapper onClick={onClick}>{children}</Wrapper>;
 };
 
 const Wrapper = styled.button`

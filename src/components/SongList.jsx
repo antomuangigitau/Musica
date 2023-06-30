@@ -1,15 +1,25 @@
 import { useState } from 'react';
 import { Wrapper } from '../styled/SongList';
 import { Heart, MoreVertical } from '../svgFiles';
+import { setActiveSong, setActiveSongs } from '../features/apiSlice';
+import { useDispatch } from 'react-redux';
+
 const SongList = (playlists) => {
+  const dispatch = useDispatch();
   const { playlists: list } = playlists;
   const { items } = list.tracks;
+
   // const [activeIndex, setIsActiveIndex] = useState('');
   // const [active, setActive] = useState(false);
   // const active = true;
   // const handleClick = (index) => {
   //   setIsActiveIndex((prevIndex) => (prevIndex === index ? '' : index));
   // };
+  const handlePlay = (activeSong) => {
+    const track = items.map((item) => item.track);
+    dispatch(setActiveSong(activeSong || track[0]));
+    dispatch(setActiveSongs(track));
+  };
   const [activeIndexes, setActiveIndexes] = useState([]);
   const [numToShow, setNumToShow] = useState(10);
   const numToAdd = 10;
@@ -29,14 +39,13 @@ const SongList = (playlists) => {
   return (
     <Wrapper>
       {items.slice(0, numToShow).map((item, index) => {
+        const { track } = item;
         const {
-          track: {
-            album: { album_type, images, name: song_name },
-            artists,
-            duration_ms,
-            name,
-          },
-        } = item;
+          album: { album_type, images, name: song_name },
+          artists,
+          duration_ms,
+          name,
+        } = track;
         const totalDurationSeconds = Math.floor(duration_ms / 1000);
         const minutes = Math.floor(totalDurationSeconds / 60);
         const seconds = totalDurationSeconds % 60;
@@ -44,7 +53,11 @@ const SongList = (playlists) => {
           .toString()
           .padStart(2, '0')}`;
         return (
-          <div className="container" key={index}>
+          <div
+            className="container"
+            key={index}
+            onClick={() => handlePlay(track)}
+          >
             <div className="image__container">
               <img src={images[2].url} alt={song_name} />
               <Heart

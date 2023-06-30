@@ -3,7 +3,14 @@ import { newRelease } from '../features/options';
 import axios from 'axios';
 import Loading from './Loading';
 import { Wrapper } from '../styled/NewRelease';
+import { useDispatch } from 'react-redux';
+import {
+  setActiveSong,
+  setActiveSongs,
+  setNewPlaylist,
+} from '../features/apiSlice';
 const NewReleases = () => {
+  const dispatch = useDispatch();
   const fetchTrack = async (url) => {
     try {
       const response = await axios(url);
@@ -18,22 +25,28 @@ const NewReleases = () => {
     isError,
   } = useQuery(['tracks'], async () => {
     const newMusic = await fetchTrack(newRelease);
-
+    dispatch(setNewPlaylist(newMusic));
     return newMusic;
   });
-  console.log(playlist);
+  const handlePlay = (activeSong) => {
+    const { items } = playlist.tracks;
+    const track = items.map((item) => item.track);
+    dispatch(setActiveSong(activeSong || track[0]));
+    dispatch(setActiveSongs(track));
+  };
+
   const music = [
     {
       title: 'New releases.',
-      tracks: playlist.tracks.items.slice(0, 11),
+      tracks: playlist?.tracks.items.slice(0, 11),
     },
     {
       title: 'Popular.',
-      tracks: playlist.tracks.items.slice(11, 21),
+      tracks: playlist?.tracks.items.slice(11, 21),
     },
     {
       title: 'Recently Played.',
-      tracks: playlist.tracks.items.slice(21, 30),
+      tracks: playlist?.tracks.items.slice(21, 30),
     },
   ];
 
@@ -53,17 +66,20 @@ const NewReleases = () => {
             <h2>{title}</h2>
             <div className="second__div">
               {tracks && tracks.length > 0 ? (
-                tracks.map((track, index) => {
+                tracks.map((trackList, index) => {
+                  const { track } = trackList;
                   const {
-                    track: {
-                      album: { artists, images },
-                      name,
-                      //   preview_url: url,
-                    },
+                    album: { artists, images },
+                    name,
+                    //   preview_url: url,
                   } = track;
                   //   console.log(artists, images, name, url);
                   return (
-                    <div className="third__div" key={index}>
+                    <div
+                      onClick={() => handlePlay(track)}
+                      className="third__div"
+                      key={index}
+                    >
                       <div>
                         <img src={images[1].url} alt={artists[0].name} />
                       </div>
