@@ -7,5 +7,11 @@ const PlayerLayout = ({ children }) => {
 const Wrapper = styled.section`
   width: 100%;
   overflow: auto;
+  border: 1px solid red;
+  margin-left: 0;
+  margin-bottom: 120px;
+  @media (min-width: 64rem) {
+    margin-left: 29px;
+  }
 `;
 export default PlayerLayout;

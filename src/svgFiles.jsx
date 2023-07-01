@@ -259,9 +259,10 @@ export const MusicSquare = () => {
   );
 };
 
-export const MoreVertical = () => {
+export const MoreVertical = ({ onClick }) => {
   return (
     <svg
+      onClick={onClick}
       width="17"
       height="17"
       viewBox="0 0 17 17"

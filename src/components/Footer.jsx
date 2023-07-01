@@ -4,8 +4,6 @@ import Player from './Player';
 
 const Footer = () => {
   const { activeSong, activeSongs } = useSelector((state) => state.playlist);
-  console.log(activeSong);
-  console.log(activeSongs);
   const { name, album: { images = [], artists = [] } = {} } = activeSong || {};
   return (
     <Wrapper className="p-x">

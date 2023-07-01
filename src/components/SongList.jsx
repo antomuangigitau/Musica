@@ -76,7 +76,11 @@ const SongList = (playlists) => {
               </div>
               <span>{album_type}</span>
               <span>{formattedDuration}</span>
-              <MoreVertical />
+              <MoreVertical
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              />
             </div>
           </div>
         );

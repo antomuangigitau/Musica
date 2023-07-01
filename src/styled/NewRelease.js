@@ -4,7 +4,6 @@ export const Wrapper = styled.section`
   font-family: 'Quicksand', sans-serif;
   .first__div {
     overflow: auto;
-    margin-bottom: 50px;
     h2 {
       color: #efeee0;
       font-weight: 700;
@@ -27,6 +26,9 @@ export const Wrapper = styled.section`
   .first__div::-webkit-scrollbar-thumb {
     background-color: var(--Grayish);
     border-radius: 10px;
+  }
+  .first__div:not(:last-child) {
+    margin-bottom: 50px;
   }
   .second__div {
     display: flex;
