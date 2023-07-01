@@ -62,7 +62,10 @@ const SongList = (playlists) => {
               <img src={images[2].url} alt={song_name} />
               <Heart
                 className={activeIndexes.includes(index) ? 'active' : ''}
-                onClick={() => handleClick(index)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleClick(index);
+                }}
               />
             </div>
             <div className="artist__details">
