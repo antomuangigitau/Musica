@@ -3,15 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { Wrapper } from '../styled/Player';
 import { Next, PlayBar, Previous, Repeat, Shuffle } from '../svgFiles';
 import { MdOutlinePauseCircleFilled } from 'react-icons/md';
-// import { useSelector } from 'react-redux';
 import ReactHowler from 'react-howler';
 import { useDispatch } from 'react-redux';
 import { setActiveSong } from '../features/apiSlice';
 
 const Player = ({ activeSongs, activeSong }) => {
-  // const newIndex = activeSongs.findIndex(
-  //   (active) => active.id === activeSong.id
-  // );
   const dispatch = useDispatch();
   const [playing, setIsPlaying] = useState(true);
   const [index, setIsIndex] = useState(0);

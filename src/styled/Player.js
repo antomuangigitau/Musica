@@ -53,7 +53,7 @@ export const Wrapper = styled.div`
       input[type='range']::-webkit-slider-thumb {
         -webkit-appearance: none;
         -webkit-appearance: none;
-        background: url('/public/assets/Ellipse 7.svg');
+        background: url('/assets/Ellipse 7.svg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
         border: 1px solid #fff;

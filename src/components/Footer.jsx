@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="first">
             <img src={images[2].url} alt={name} />
             <div>
-              <h4>{name}</h4>
+              <h4>{name.substring(0, 10)}...</h4>
               <h5>
                 {artists.length > 1
                   ? `${artists[0].name} ft ${artists[1].name}`

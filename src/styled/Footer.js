@@ -23,7 +23,6 @@ export const Wrapper = styled.footer`
     gap: 20px;
     .first {
       display: flex;
-      flex-direction: column;
       gap: 5px;
       img {
         width: 49px;
