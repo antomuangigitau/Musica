@@ -76,15 +76,13 @@ const Player = ({ activeSongs, activeSong }) => {
 
   return (
     <Wrapper>
-      <div>
-        <ReactHowler
-          ref={soundRef}
-          playing={playing}
-          src={activeSong.preview_url}
-          onLoad={onLoad}
-          onEnd={onEnd}
-        />
-      </div>
+      <ReactHowler
+        ref={soundRef}
+        playing={playing}
+        src={activeSong.preview_url}
+        onLoad={onLoad}
+        onEnd={onEnd}
+      />
       <div className="click">
         <button>
           <Shuffle onClick={onShuffle} className={shuffle ? 'activesvg' : ''} />

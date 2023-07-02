@@ -30,9 +30,8 @@ const Description = (playlists) => {
   };
   return (
     <Wrapped>
-      <div className="container">
-        <img src={images[0].url} alt={name} />
-      </div>
+      <img className="image" src={images[0].url} alt={name} />
+
       <article className="article">
         <h3>{name}</h3>
         <article>

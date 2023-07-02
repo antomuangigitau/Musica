@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     align-self: center;
     display: flex;
     align-items: center;
-    gap: 42px;
+    gap: 18px;
     button {
       cursor: pointer;
     }
@@ -16,8 +16,8 @@ export const Wrapper = styled.div`
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
     }
     .play__color {
       background-color: rgba(250, 205, 102, 1);
@@ -31,10 +31,14 @@ export const Wrapper = styled.div`
     align-items: center;
     gap: 10px;
     width: 100%;
+    color: #fff;
+    p {
+      font-size: 10px;
+    }
     .range {
       position: relative;
       width: 100%;
-      height: 12px;
+      height: 4px;
       border-radius: 50px;
       background-color: #fff;
       input[type='range'] {
@@ -49,7 +53,7 @@ export const Wrapper = styled.div`
       input[type='range']::-webkit-slider-thumb {
         -webkit-appearance: none;
         -webkit-appearance: none;
-        background: url(./assets/images/icon-slider.svg);
+        background: url('/public/assets/Ellipse 7.svg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
         border: 1px solid #fff;
@@ -57,6 +61,20 @@ export const Wrapper = styled.div`
         width: 12px;
         border-radius: 50%;
       }
+    }
+  }
+  @media (min-width: 48rem) {
+    .click {
+      gap: 24px;
+      .btn {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  @media (min-width: 64rem) {
+    .click {
+      gap: 42px;
     }
   }
 `;

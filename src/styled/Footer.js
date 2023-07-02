@@ -16,15 +16,15 @@ export const Wrapper = styled.footer`
   width: 100%;
   height: 120px;
   .container {
-    width: 100%;
     height: inherit;
     display: grid;
     align-items: center;
-    grid-template-columns: 1.5fr 3fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     .first {
       display: flex;
-      gap: 15px;
+      flex-direction: column;
+      gap: 5px;
       img {
         width: 49px;
         height: 49px;
@@ -43,8 +43,19 @@ export const Wrapper = styled.footer`
         }
       }
     }
+    .third {
+      display: none;
+    }
   }
 
+  @media (min-width: 57rem) {
+    .container {
+      grid-template-columns: 1fr 3.5fr 0.5fr;
+      .third {
+        display: block;
+      }
+    }
+  }
   @media (min-width: 64rem) {
     padding-left: 67px;
   }

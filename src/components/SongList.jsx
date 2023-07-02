@@ -59,7 +59,6 @@ const SongList = (playlists) => {
             onClick={() => handlePlay(track)}
           >
             <div className="image__container">
-              <img src={images[2].url} alt={song_name} />
               <Heart
                 className={activeIndexes.includes(index) ? 'active' : ''}
                 onClick={(e) => {
@@ -67,20 +66,24 @@ const SongList = (playlists) => {
                   handleClick(index);
                 }}
               />
+              <img src={images[2].url} alt={song_name} />
             </div>
             <div className="artist__details">
-              <div>
+              <div className="app__name">
                 <span>
-                  {`${name.substring(0, 25)} ...`} ~ {artists[0].name}
+                  {`${name.substring(0, 20)}...`} - {artists[0].name}
                 </span>
+                <span>{album_type}</span>
               </div>
-              <span>{album_type}</span>
-              <span>{formattedDuration}</span>
-              <MoreVertical
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
-              />
+
+              <div className="formatted">
+                <span>{formattedDuration}</span>
+                <MoreVertical
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                />
+              </div>
             </div>
           </div>
         );

@@ -2,18 +2,17 @@ import styled from 'styled-components';
 export const Wrapped = styled.div`
   font-family: 'Quicksand', sans-serif;
   display: flex;
+  flex-direction: column;
   gap: 27px;
-  .container {
-    width: 284px;
-    height: 288.97px;
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 35.1703px;
-    }
+
+  .image {
+    // width: 357px;
+    // height: 289px;
+    border-radius: 25px;
   }
+
   .article {
-    align-self: flex-end;
+    align-self: flex-start;
     h3 {
       color: #a4c7c6;
       font-weight: 700;
@@ -39,6 +38,14 @@ export const Wrapped = styled.div`
           margin-right: 12px;
         }
       }
+    }
+  }
+  @media (min-width: 37.5rem) {
+    flex-direction: row;
+
+    .image {
+      width: 284px;
+      border-radius: 35.1703px;
     }
   }
 `;
