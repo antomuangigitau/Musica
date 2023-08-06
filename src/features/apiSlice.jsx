@@ -8,6 +8,7 @@ const initialState = {
   isOpen: false,
   activeSongs: [],
   activeSong: null,
+  text: '',
 };
 
 const playlistSlice = createSlice({
@@ -32,6 +33,12 @@ const playlistSlice = createSlice({
     setActiveSong: (state, { payload }) => {
       state.activeSong = payload;
     },
+    setText: (state, { payload }) => {
+      state.text = payload;
+    },
+    setAddPlaylist: (state, { payload }) => {
+      state.playlists = state.playlists.push(payload);
+    },
   },
 });
 
@@ -43,5 +50,7 @@ export const {
   setIsOpen,
   setActiveSong,
   setActiveSongs,
+  setText,
+  setAddPlaylist,
 } = playlistSlice.actions;
 export default playlistSlice.reducer;

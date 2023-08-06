@@ -7,8 +7,10 @@ import { useDispatch } from 'react-redux';
 import {
   setActiveSong,
   setActiveSongs,
+  setAddPlaylist,
   setNewPlaylist,
 } from '../features/apiSlice';
+
 const NewReleases = () => {
   const dispatch = useDispatch();
   const fetchTrack = async (url) => {
@@ -26,6 +28,7 @@ const NewReleases = () => {
   } = useQuery(['tracks'], async () => {
     const newMusic = await fetchTrack(newRelease);
     dispatch(setNewPlaylist(newMusic));
+    dispatch(setAddPlaylist(newMusic));
     return newMusic;
   });
   const handlePlay = (activeSong) => {

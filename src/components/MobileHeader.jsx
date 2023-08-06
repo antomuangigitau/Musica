@@ -2,11 +2,15 @@ import { Hamburger, Logo, Search, Close } from '../svgFiles';
 import { Link, NavLink } from 'react-router-dom';
 import { sidebarItems } from '../data';
 import { useDispatch, useSelector } from 'react-redux';
-import { setIsClose, setIsOpen } from '../features/apiSlice';
+import { setIsClose, setIsOpen, setText } from '../features/apiSlice';
 import { Wrapper } from '../styled/MobileHeader';
 const MobileHeader = () => {
   const dispatch = useDispatch();
-  const { isOpen } = useSelector((state) => state.playlist);
+  const { isOpen, text } = useSelector((state) => state.playlist);
+  const updateSearch = (e) => {
+    const name = e.target.value;
+    dispatch(setText(name));
+  };
   return (
     <Wrapper className="m-x">
       <button onClick={() => dispatch(setIsOpen())} type="button">
@@ -16,9 +20,18 @@ const MobileHeader = () => {
         <Link to="/">
           <Logo />
         </Link>
-        <button type="button">
-          <Search />
-        </button>
+        <Link to="search" className="search-bar">
+          <input
+            className="search-bar__input"
+            type="text"
+            placeholder="Search artists & songs"
+            value={text}
+            onChange={updateSearch}
+          />
+          <button className="search-bar__submit" type="button">
+            <Search />
+          </button>
+        </Link>
       </div>
       <div className={`container ${isOpen ? 'fade-in' : 'fade-out'}`}>
         <button

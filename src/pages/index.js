@@ -4,5 +4,6 @@ import Error from './Error';
 import Home from './Home';
 import Albums from './Albums';
 import MobileHeader from '../components/MobileHeader';
+import Search from './SearchPage';
 
-export { SharedLayout, Home, Collections, Error, Albums, MobileHeader };
+export { SharedLayout, Home, Collections, Error, Albums, MobileHeader, Search };

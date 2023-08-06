@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
+  font-family: 'Quicksand', sans-serif;
   grid-area: header;
   width: 100%;
   position: relative;
@@ -15,6 +16,42 @@ export const Wrapper = styled.header`
     flex: 1;
     display: flex;
     justify-content: space-between;
+    .search-bar {
+      --size: 60px;
+      display: flex;
+      border-radius: 50px;
+      width: var(--size);
+      padding: 3px;
+      position: relative;
+      transition: width 300ms cubic-bezier(0.18, 0.89, 0.32, 1.15);
+      overflow: hidden;
+      &__input {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        flex-grow: 1;
+        opacity: 0;
+        cursor: pointer;
+      }
+      &__submit {
+        border-radius: 50%;
+        margin-left: auto;
+      }
+      &:focus-within {
+        width: 80%;
+        .search-bar__input {
+          opacity: 1;
+          cursor: initial;
+          width: calc(100% - var(--size));
+          font-size: 16px;
+          color: #fff;
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
+    }
   }
   .container {
     z-index: 4;

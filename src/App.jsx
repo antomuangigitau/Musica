@@ -1,5 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SharedLayout, Home, Collections, Albums, Error } from './pages';
+import {
+  SharedLayout,
+  Home,
+  Collections,
+  Albums,
+  Error,
+  Search,
+} from './pages';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'playlist/:id',
         element: <Albums />,
+      },
+      {
+        path: 'search',
+        element: <Search />,
       },
 
       {
