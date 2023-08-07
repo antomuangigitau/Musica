@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 210px);
-  margin-bottom: 120px;
   .center {
-    height: 100%;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      margin-bottom: 120px;
     }
     .third__div {
       h4,
