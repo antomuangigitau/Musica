@@ -7,8 +7,11 @@ Musica is a simple React app that allows users to play music. It leverages the R
 # Features
 
 1. Search
+
    Search functionality allows users to discover their favorite songs and artists effortlessly. Utilizing the Rapid Spotify API, Musica provides users with the ability to search for a wide range of music content.
+
 2. Playback
+
    Musica's playback controls offer users the freedom to control their music experience with ease. Although there may be a temporary issue with audio playback (songs not playing), the app still provides essential controls for play, pause, skip, and volume adjustment.
 
 # Prerequisites
