@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  width: 100%;
+  height: calc(100vh - 210px);
+  margin-bottom: 120px;
   .center {
-    margin-bottom: 120px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    height: 100%;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
     .third__div {
       h4,
       h5 {
@@ -26,15 +31,30 @@ export const Wrapper = styled.div`
         border-radius: 25px;
       }
     }
+    .text__show {
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        text-align: center;
+      }
+    }
   }
   @media (min-width: 64rem) {
     .center {
-      grid-template-columns: repeat(3, 1fr);
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
   @media (min-width: 90rem) {
     .center {
-      grid-template-columns: repeat(4, 1fr);
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 `;
