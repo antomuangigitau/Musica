@@ -66,5 +66,3 @@ const MobileHeader = () => {
 };
 
 export default MobileHeader;
-
-// , setIsOpen
