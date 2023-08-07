@@ -41,18 +41,27 @@ export const Wrapper = styled.div`
       }
     }
   }
-  @media (min-width: 64rem) {
+  @media (min-width: 48rem) {
+    margin-left: 27px;
     .center {
       .grid-container {
         grid-template-columns: repeat(3, 1fr);
       }
     }
   }
-  @media (min-width: 90rem) {
+  @media (min-width: 64rem) {
+    /* margin-left: 27px; */
     .center {
       .grid-container {
         grid-template-columns: repeat(4, 1fr);
       }
     }
   }
+  /* @media (min-width: 80rem) {
+    .center {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  } */
 `;

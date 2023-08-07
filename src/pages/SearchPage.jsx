@@ -7,7 +7,14 @@ import { Wrapper } from '../styled/SearchPage';
 const SearchPage = () => {
   const dispatch = useDispatch();
   const { playlists, text } = useSelector((state) => state.playlist);
-  const items = playlists?.map((item) => {
+  const flatItem = playlists.flat();
+  const uniqueItem = flatItem.reduce((acc, item) => {
+    if (!acc.find((existingItem) => existingItem.id === item.id)) {
+      acc.push(item);
+    }
+    return acc;
+  }, []);
+  const items = uniqueItem.map((item) => {
     return item.tracks;
   });
   const list = items

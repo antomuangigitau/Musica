@@ -15,8 +15,12 @@ const playlistSlice = createSlice({
   name: 'playlist',
   initialState,
   reducers: {
-    setPlaylists: (state, action) => {
-      state.playlists = action.payload;
+    setAddPlaylist: (state, { payload }) => {
+      state.playlists = state.playlists.concat(payload);
+    },
+    setPlaylists: (state, { payload }) => {
+      const uniquePlaylists = [...state.playlists, payload];
+      state.playlists = uniquePlaylists;
     },
     setNewPlaylist: (state, action) => {
       state.newPlaylist = action.payload;
@@ -35,9 +39,6 @@ const playlistSlice = createSlice({
     },
     setText: (state, { payload }) => {
       state.text = payload;
-    },
-    setAddPlaylist: (state, { payload }) => {
-      state.playlists = state.playlists.push(payload);
     },
   },
 });
